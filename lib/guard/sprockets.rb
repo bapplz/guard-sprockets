@@ -19,7 +19,7 @@ module Guard
       if options.delete(:minify)
         begin
           require 'uglifier'
-          @sprockets_env.js_compressor = Uglifier.new
+          @sprockets.js_compressor = ::Uglifier.new
           UI.info "Sprockets will compress output (minify)."
         rescue Exception => e  
   	  UI.error e.message  
